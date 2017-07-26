@@ -1,0 +1,53 @@
+
+CLIENT
+  - what to do about prefs section?
+    - maybe add some sliders and such to tweak the gravity, springiness of the viz?
+    - add pref for the threshold at which a max-nodes warning should be displayed (if at all)
+  - it may not be necessary any more to add the color to the node elements, just use the classes
+    - that way it wouldn't even have to redraw when you switch colorSchemes
+  - changing the color scheme should not automatically change the current folder to root
+  - at the top of flower-languages, add name of repo as a link to the repo
+  - need loading indicator for cleaning up large repos
+
+SERVER
+  - try to break the server with weird urls and such
+  - aborting should kill the process immediately rather than waiting until the end and then deleting
+
+BUILD/DEPLOY
+  - deploy to aws w/codedeploy, S3, Elastic Beanstalk
+
+CHROME EXTENSION
+  - pros
+    - button in browser makes access easy
+    - the static files are saved in the user's harddrive
+      - so no strain on the server from serving those files
+      - and the app will work offline
+    - don't have to worry about cross-browser issues
+    - no real need to minify stuff for performance reasons
+  - cons
+    - harder to automate the deployment of new versions
+      - but check out https://developer.chrome.com/webstore/using_webstore_api
+    - user has to install the app on the chrome store
+
+VISUALIZATION
+  - change 'root' to '/'
+  - check out http://graus.nu/d3/ for zoom function
+
+GIT FUNCTIONALITY
+  - look at visualizing git history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
