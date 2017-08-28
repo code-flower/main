@@ -8,7 +8,7 @@ You'll want a folder to hold the key and cert files. Create the folder in a conv
 ### Step 2: Generate a Certificate Signing Request (CSR)
 
 ```
-openssl req -new -sha256 -nodes -out \server.csr -newkey rsa:2048 -keyout \server.key -config <(
+openssl req -new -sha256 -nodes -out \server.csr -newkey rsa:2048 -keyout \privkey.pem -config <(
 cat <<-EOF
 [req]
 default_bits = 2048
@@ -31,7 +31,7 @@ EOF
 ### Step 3: Generate the Certificate Using the CSR 
 
 ```
-openssl x509 -req -sha256 -days 365 -in server.csr -signkey server.key -out server.crt -extfile <(
+openssl x509 -req -sha256 -days 365 -in server.csr -signkey privkey.pem -out cert.pem -extfile <(
 cat <<-EOF
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
@@ -47,7 +47,7 @@ EOF
 ### Step 4: Check the Properties of the Cert
 
 ```
-openssl x509 -text -in server.crt -noout
+openssl x509 -text -in cert.pem -noout
 ```
 
 You should see version 3, and localhost in the subjectAltName section.
