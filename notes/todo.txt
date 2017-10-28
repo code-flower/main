@@ -1,13 +1,6 @@
 
 CLIENT
-  - what to do about prefs section?
-    - maybe add some sliders and such to tweak the gravity, springiness of the viz?
-    - add pref for the threshold at which a max-nodes warning should be displayed (if at all)
-  - it may not be necessary any more to add the color to the node elements, just use the classes
-    - that way it wouldn't even have to redraw when you switch colorSchemes
-  - changing the color scheme should not automatically change the current folder to root
-  - at the top of flower-languages, add name of repo as a link to the repo
-  - need loading indicator for cleaning up large repos
+
 
 SERVER
   - try to break the server with weird urls and such
@@ -29,9 +22,6 @@ CHROME EXTENSION
       - but check out https://developer.chrome.com/webstore/using_webstore_api
     - user has to install the app on the chrome store
 
-VISUALIZATION
-  - change 'root' to '/'
-  - check out http://graus.nu/d3/ for zoom function
 
 GIT FUNCTIONALITY
   - look at visualizing git history
