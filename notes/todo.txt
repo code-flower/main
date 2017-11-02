@@ -1,42 +1,44 @@
 
-CLIENT
+------------ GENERAL -----------
+- look at visualizing git history
 
+------------- ADMIN ------------
+- create a monitoring script using gulp
+  - should open a new browser windows with multiple tabs:
+    - pm2 monitor
+    - google analytics
+    - chrome extension stats
+  - maybe also open iterm and start an ssh connection to various servers
+- server should have an endpoint for getting logs from all servers
+  - could use rsync or scp, or create a /logs endpoint in the servers
+- need to periodically check https://api.github.com/meta to get IPs of webhooks and whitelist them on the webhook port
+  - ideally, there would be a webhook server inside of admin that sends a message to all of the cloc-servers when they need to pull and restart (rather than having direct contact with github on the individual cloc-servers)
+- maybe the connection monitor code lives on the admin-server, and is rsynced to the cloc-servers when the monitor command is run. That code wouldn't have to be inside the cloc-server directory.
 
-SERVER
-  - try to break the server with weird urls and such
-  - aborting should kill the process immediately rather than waiting until the end and then deleting
+----------- CLIENT-WEB ----------
+- put email endpoint back in w/ contact-me tab?
+- modify bundler to add watchify task and put handle error in the right place (like in portal-web)
+- UI improvements
+  - there should be a 'depth' dropdown that shows only N levels deep in the tree (default is infinity)
+  - hovering on the name of a folder in the dropdown should select the files in that folder
+  - hover on a file in the codeflower should bring up the code in that file. This would require a significant structural change in that the repos could not be deleted immediately after the JSON is created. The WS connection would have to remain open, and the file contents passed to the client on hover (a /file endpoint?). Then the repo could be deleted when the server detects that the client has disconnected.
+  - zoomability. check out http://graus.nu/d3/ for zoom function
+- what to do about prefs section?
+  - maybe add some sliders and such to tweak the gravity, springiness of the viz?
+  - add pref for the threshold at which a max-nodes warning should be displayed (if at all)
+- it may not be necessary any more to add the color to the node elements, just use the classes
+  - that way it wouldn't even have to redraw when you switch colorSchemes
+- changing the color scheme should not automatically change the current folder to root
+- need loading indicator for cleaning up large repos
 
-BUILD/DEPLOY
-  - deploy to aws w/codedeploy, S3, Elastic Beanstalk
+------------- CLOC-SERVER ------------
+- log rotation
+- make npm module for PM2 wrapper
+  - the wrapper is used in both the admin and cloc-server repos, making it a good candidate for publication
+    - should use Promise.promisifyAll or something similar
 
-CHROME EXTENSION
-  - pros
-    - button in browser makes access easy
-    - the static files are saved in the user's harddrive
-      - so no strain on the server from serving those files
-      - and the app will work offline
-    - don't have to worry about cross-browser issues
-    - no real need to minify stuff for performance reasons
-  - cons
-    - harder to automate the deployment of new versions
-      - but check out https://developer.chrome.com/webstore/using_webstore_api
-    - user has to install the app on the chrome store
-
-
-GIT FUNCTIONALITY
-  - look at visualizing git history
-
-
-
-
-
-
-
-
-
-
-
-
+------------- CHROME ------------
+- maybe change the url in the location bar when user clicks on Codeflower
 
 
 
