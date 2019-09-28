@@ -5,7 +5,7 @@ This is codeflower, an app for visualizing git repositories. If you give it a re
 
 You can access the app in two ways:
 
-1. by installing the app at the [Chrome store](https://chrome.google.com/webstore/category/apps); navigating to the github page of the repo you want to visualize; and clicking the "Codeflower" tab.
+1. by installing the app as an extension for [Chrome](https://chrome.google.com/webstore/detail/codeflower/mnlengnbfpfgcfdgfpkjekoaeophmmeh) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeflower/?src=search). Once it's installed, navigate to the github page of the repo you want to visualize and click the "Codeflower" tab.
 
 2. by heading to [web.codeflower.la](https://web.codeflower.la), and entering the git clone url of the repo you want to visualize in the "add repo" input.
 
@@ -32,5 +32,3 @@ Miscellaneous administrative functions, like monitoring the cloc-servers and rot
 #### pm2-
 
 These three repos are extensions to [pm2](https://github.com/Unitech/pm2), a process-manager for Node. The cloc-servers are run via pm2.
-
-
